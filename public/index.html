@@ -29,8 +29,8 @@
             <div class="timeCard-container">
                 <div class="timeCard-box">
                     <div class="timeCard-time">
-                        <span>10:23</span>
-                        <span>AM</span>
+                        <span id="timeCardTimeVal">10:23</span>
+                        <span id="timeCardAMPM">AM</span>
                     </div>
                     <div class="timeCard-date">
                         <span>Saturday, August</span>
@@ -40,36 +40,40 @@
                 </div>
             </div>
             <!-- Location Entry Screen -------------------------------------------------------------------- -->
-            <div class="searchBox-container classShow">
-                <div class="searchBox">
-                    <!-- <div class="searchBox-contents"> -->
+            <div id="locationSearchContainer" class="classShow">
+                <div class="searchBox-container">
+                    <div class="searchBox">
                         <div class="searchBox-searchText">
                             <span>Please enter your location to start the Kitchen Dashboard</span>                            
                         </div>
                         <div class="searchBox-searchInput">
-                            <input class="searchBox-searchInput-field" type="text" placeholder="Search by City/Zipcode">
+                            <input id="searchBoxInput" class="searchBox-searchInput-field" type="text" placeholder="Search by City/Zipcode">
                         </div>
                         <div class="searchBox-buttonDiv">
-                            <button class="searchBox-button">Search</button>
+                            <button class="searchBox-button" onclick="showCurrentWeather()">Search</button>
                         </div>
-                    <!-- </div> -->
+                    </div>
                 </div>
             </div>
-            <!-- Current Conditions Screen -------------------------------------------------------------------- -->\
-            <div class="currentConditions-container classHide ">
-                <div class="currentConditions-general currentConditions-temp"></div>
-                <div class="currentConditions-general currentConditions-wind"></div>
-                <div class="currentConditions-general currentConditions-rain"></div>
+            <!-- Current Conditions Screen -------------------------------------------------------------------- -->
+            <div id="currentWeatherContainer" class="classHide">
+                <div class="currentConditions-container ">
+                    <div class="currentConditions-general currentConditions-temp"></div>
+                    <div class="currentConditions-general currentConditions-wind"></div>
+                    <div class="currentConditions-general currentConditions-rain"></div>
+                </div>    
             </div>
             <!-- Hourly Conditions Screen -------------------------------------------------------------------- -->
-            <div class="hourlyConditions-container classHide">
-                <div class="hourlyConditions-genral hourlyConditions-left"></div>
-                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                <div class="hourlyConditions-genral hourlyConditions-right"></div>
+            <div id="hourlyConditionsContainer" class="classHide">
+                <div class="hourlyConditions-container">
+                    <div class="hourlyConditions-genral hourlyConditions-left"></div>
+                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                    <div class="hourlyConditions-genral hourlyConditions-right"></div>
+                </div>                    
             </div>
         </div>
 </body>
