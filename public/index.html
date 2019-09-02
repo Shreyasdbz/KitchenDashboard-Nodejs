@@ -24,9 +24,8 @@
     <title>Kitchen Dashboard V2</title>
 </head>
 <body>
-    <!-- Location Entry Screen -------------------------------------------------------------------- -->
-    <div id="container-current-main">
-        <div class="container-current classShow">
+        <div class="container-current">
+            <!-- Time Card -------------------------------------------------------------------- -->
             <div class="timeCard-container">
                 <div class="timeCard-box">
                     <div class="timeCard-time">
@@ -40,7 +39,8 @@
                     </div>
                 </div>
             </div>
-            <div class="searchBox-container">
+            <!-- Location Entry Screen -------------------------------------------------------------------- -->
+            <div class="searchBox-container classShow">
                 <div class="searchBox">
                     <!-- <div class="searchBox-contents"> -->
                         <div class="searchBox-searchText">
@@ -55,48 +55,14 @@
                     <!-- </div> -->
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Current Conditions Screen -------------------------------------------------------------------- -->
-    <div id="container-current-main">
-        <div class="container-current classShow">
-            <div class="timeCard-container">
-                <div class="timeCard-box">
-                    <div class="timeCard-time">
-                        <span>10:23</span>
-                        <span>AM</span>
-                    </div>
-                    <div class="timeCard-date">
-                        <span>Saturday, August</span>
-                        <span class="timeCard-date-dateVal"> 31st</span>
-                        <span> 2019</span>
-                    </div>
-                </div>
-            </div>
-            <div class="currentConditions-container">
+            <!-- Current Conditions Screen -------------------------------------------------------------------- -->\
+            <div class="currentConditions-container classHide ">
                 <div class="currentConditions-general currentConditions-temp"></div>
                 <div class="currentConditions-general currentConditions-wind"></div>
                 <div class="currentConditions-general currentConditions-rain"></div>
             </div>
-        </div>
-    </div>
-    <!-- Hourly Conditions Screen -------------------------------------------------------------------- -->
-    <div id="container-hourly-main classHide">
-        <div class="container-hourly">
-            <div class="timeCard-container">
-                <div class="timeCard-box">
-                    <div class="timeCard-time">
-                        <span>10:23</span>
-                        <span>AM</span>
-                    </div>
-                    <div class="timeCard-date">
-                        <span>Saturday, August</span>
-                        <span class="timeCard-date-dateVal"> 31st</span>
-                        <span> 2019</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hourlyConditions-container">
+            <!-- Hourly Conditions Screen -------------------------------------------------------------------- -->
+            <div class="hourlyConditions-container classHide">
                 <div class="hourlyConditions-genral hourlyConditions-left"></div>
                 <div class="hourlyConditions-genral hourlyConditions-middle"></div>
                 <div class="hourlyConditions-genral hourlyConditions-middle"></div>
@@ -106,9 +72,5 @@
                 <div class="hourlyConditions-genral hourlyConditions-right"></div>
             </div>
         </div>
-    </div>
-
-
-
 </body>
 </html>
