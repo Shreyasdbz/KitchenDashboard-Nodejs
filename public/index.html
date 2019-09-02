@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JavaScripts -->
+    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4nAkabJzL1wlZF4I5SWC1WXdkvxtwato&libraries=places"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+    <script defer src="./script.js"></script>
+        <!-- Bootstrap -->
+    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>Kitchen Dashboard V2</title>
+</head>
+<body>
+    <!-- Current Conditions Screen -------------------------------------------------------------------- -->
+    <div id="container-current-main">
+        <div class="container-current classShow">
+            <div class="timeCard-container">
+                <div class="timeCard-box">
+                    <div class="timeCard-time">
+                        <span>10:23</span>
+                        <span>AM</span>
+                    </div>
+                    <div class="timeCard-date">
+                        <span>Saturday, August</span>
+                        <span class="timeCard-date-dateVal"> 31st</span>
+                        <span> 2019</span>
+                    </div>
+                </div>
+            </div>
+            <div class="currentConditions-container">
+                <div class="currentConditions-general currentConditions-temp"></div>
+                <div class="currentConditions-general currentConditions-wind"></div>
+                <div class="currentConditions-general currentConditions-rain"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Hourly Conditions Screen -------------------------------------------------------------------- -->
+    <div id="container-hourly-main classHide">
+        <div class="container-hourly">
+            <div class="timeCard-container">
+                <div class="timeCard-box">
+                    <div class="timeCard-time">
+                        <span>10:23</span>
+                        <span>AM</span>
+                    </div>
+                    <div class="timeCard-date">
+                        <span>Saturday, August</span>
+                        <span class="timeCard-date-dateVal"> 31st</span>
+                        <span> 2019</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hourlyConditions-container">
+                <div class="hourlyConditions-genral hourlyConditions-left"></div>
+                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                <div class="hourlyConditions-genral hourlyConditions-middle"></div>
+                <div class="hourlyConditions-genral hourlyConditions-right"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

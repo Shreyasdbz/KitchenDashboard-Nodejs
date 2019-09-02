@@ -1,0 +1,28 @@
+{
+  "name": "kitchendashboardv2",
+  "version": "2.0.0",
+  "description": "Second generation of the Kitchen Dashboard weather app with better UI and more features",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shreyasdbz/KitchenDashboardV2.git"
+  },
+  "author": "Shreyas Sane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shreyasdbz/KitchenDashboardV2/issues"
+  },
+  "homepage": "https://github.com/Shreyasdbz/KitchenDashboardV2#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0",
+    "nodemon": "^1.19.1"
+  }
+}
