@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -29,13 +30,16 @@
             <div class="timeCard-container">
                 <div class="timeCard-box">
                     <div class="timeCard-time">
-                        <span id="timeCardTimeVal">10:23</span>
-                        <span id="timeCardAMPM">AM</span>
+                        <span timeCardTimeVal>10:23</span>
+                        <span timeCardAMPM class="timeCard-time-AMPM">AM</span>
                     </div>
                     <div class="timeCard-date">
-                        <span>Saturday, August</span>
-                        <span class="timeCard-date-dateVal"> 31st</span>
-                        <span> 2019</span>
+                        <span timeCardDay>Day</span>
+                        <br style="line-height: 100%">
+                        <span timeCardMonth>Month</span>
+                        <span timeCardDate class="timeCard-date-dateVal">Date</span>
+                        <br style="line-height: 100%">
+                        <span timeCardYear>Year</span>
                     </div>
                 </div>
             </div>
@@ -47,7 +51,7 @@
                             <span>Please enter your location to start the Kitchen Dashboard</span>                            
                         </div>
                         <div class="searchBox-searchInput">
-                            <input id="searchBoxInput" class="searchBox-searchInput-field" type="text" placeholder="Search by City/Zipcode">
+                            <input searchBoxInput class="searchBox-searchInput-field" type="text" placeholder="Search by City/Zipcode">
                         </div>
                         <div class="searchBox-buttonDiv">
                             <button class="searchBox-button" onclick="showCurrentWeather()">Search</button>
@@ -58,22 +62,442 @@
             <!-- Current Conditions Screen -------------------------------------------------------------------- -->
             <div id="currentWeatherContainer" class="classHide">
                 <div class="currentConditions-container ">
-                    <div class="currentConditions-general currentConditions-temp"></div>
-                    <div class="currentConditions-general currentConditions-wind"></div>
-                    <div class="currentConditions-general currentConditions-rain"></div>
+                    <div class="currentConditions-general currentConditionsTempBox">
+                        <div class="currentConditionsBox-title">
+                            <span>Current Temp</span>
+                        </div>
+                        <div class="currentConditionsBox-icon">
+                            <canvas class="currentConditionsIcon" id="currentConditionsIcon" height="125px" width="125px"></canvas>                            
+                        </div>
+                        <div class="currentConditionsBox-val">
+                            <span currentConditionsTempVal>80</span>
+                            <span class="currentConditionsBox-subText">°F</span>
+                        </div>
+                    </div>
+                    <div class="currentConditions-general currentConditionsWindBox">
+                        <div class="currentConditionsBox-title">
+                            <span>Current Wind</span>
+                        </div>
+                        <div class="currentConditionsBox-icon">
+                            <img src="./assets/CurrentWind_Icon.png" alt="currentWindIcon" style="height: 125px; width:125px;">
+                        </div>
+                        <div class="currentConditionsBox-val">
+                            <span currentConditionsWindVal>5</span>
+                            <span class="currentConditionsBox-subText">MPH</span>
+                        </div>
+                   </div>
+                    <div class="currentConditions-general currentConditionsRainBox">
+                        <div class="currentConditionsBox-title">
+                            <span>Current Rain</span>
+                        </div>
+                        <div class="currentConditionsBox-icon">
+                            <img src="./assets/CurrentRain_Icon.png" alt="currentRainIcon" style="height: 125px; width:125px;">
+                        </div>
+                        <div class="currentConditionsBox-val">
+                            <span currentConditionsRainVal>10</span>
+                            <span class="currentConditionsBox-subText">%</span>
+                        </div>
+                    </div>
                 </div>    
             </div>
             <!-- Hourly Conditions Screen -------------------------------------------------------------------- -->
             <div id="hourlyConditionsContainer" class="classHide">
-                <div class="hourlyConditions-container">
-                    <div class="hourlyConditions-genral hourlyConditions-left"></div>
-                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                    <div class="hourlyConditions-genral hourlyConditions-middle"></div>
-                    <div class="hourlyConditions-genral hourlyConditions-right"></div>
+                <div class="splitConditions-container">
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-left">
+                        <div class="splitConditions-title">
+                            <span hour1>Hour1</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour1Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour1VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour1RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title">
+                            <span hour2>Hour2</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour2Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour2VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour2RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title">
+                            <span hour3>Hour3</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour3Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour3VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>                        
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour3RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title">
+                            <span hour4>Hour4</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour4Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour4VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>                        
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour4RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title">
+                            <span hour5>Hour5</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour5Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour5VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>                        
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour5RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title">
+                            <span hour6>Hour6</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour6Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour6VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>                        
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour6RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral hourlyConditions-box-background splitConditions-right">
+                        <div class="splitConditions-title">
+                            <span hour7>Hour7</span>
+                        </div>
+                        <div class="splitConditions-icon">
+                            <canvas class="splitConditions-icon" id="hour7Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-val">
+                            <span hour7VAL class="splitConditions-val">VAL</span>
+                            <span class="splitConditions-subText">°F</span>
+                        </div>                        
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue" hour7RainVal>10</span>
+                                <span class="splitConditions-rainSubText">%</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>                    
+            </div>
+            <!-- Weekly Conditions Screen -------------------------------------------------------------------- -->
+            <div id="weeklyConditionsContainer" class="classHide">
+                <div class="splitConditions-container">
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-left">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName1>DAY1</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day1Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day1High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day1Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day1RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName2>DAY2</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day2Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day2High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day2Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day2RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName3>DAY3</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day3Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day3High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day3Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day3RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName4>DAY4</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day4Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day4High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day4Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day4RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName5>DAY5</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day5Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day5High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day5Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day5RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-middle">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName6>DAY6</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day6Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day6High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day6Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day6RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splitConditions-genral weeklyConditions-box-background splitConditions-right">
+                        <div class="splitConditions-title splitConditions-title-weekly">
+                            <span dayName7>DAY7</span>
+                        </div>
+                        <div class="splitConditions-icon splitConditions-icon-weekly">
+                            <canvas class="splitConditions-icon splitConditions-icon-weekly" id="day7Icon" height="80px" width="80px"></canvas>                            
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">High:</span>
+                            <span day7High class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="splitConditions-weeklyContainer">
+                            <span class="splitConditions-subText-weekly">Low:</span>
+                            <span day7Low class="splitConditions-val-weekly">VAL</span>
+                            <span class="splitConditions-subText-weekly">°F</span>
+                        </div>
+                        <div class="rainForecastContainer">
+                            <div class="splitConditions-rainIcon">
+                                <img class="rainIcon" src="./assets/SmallRain_Icon.png" alt="">
+                            </div>
+                            <div class="splitConditions-rain">
+                                <span class="splitConditions-rainValue splitConditions-rainValue-weekly" day7RainVal>10</span>
+                                <span class="splitConditions-rainSubText splitConditions-rainSubText-weekly">%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            <!-- News Screen -------------------------------------------------------------------- -->
+            <div id="newsContainer" class="classHide">
+                <div class="news">
+                    <div class="newsBox newsBox1">
+                        <div class="newsbox-image newsbox-image-img">
+                            <img class="newsbox-image-img" src="./assets/testNewsImg1.jpg" id="newsBoxImg1">
+                        </div>
+                        <div class="newsbox-content">
+                            <div class="newsbox-content-headline">
+                                <span newsBoxHeadline1>Headline1</span>
+                            </div>
+                            <div class="newsbox-content-article">
+                                <span newsBoxArticle1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ....
+                                </span>
+                                <span newsBoxSource1>Source</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsBox newsBox-middle newsBox2">
+                        <div class="newsbox-image newsbox-image-img">
+                            <img class="newsbox-image-img" src="./assets/testNewsImg2.jpg" id="newsBoxImg2">
+                        </div>
+                        <div class="newsbox-content">
+                            <div class="newsbox-content-headline">
+                                <span newsBoxHeadline2>Headline2</span>
+                            </div>
+                            <div class="newsbox-content-article">
+                                <span newsBoxArticle2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ....
+                                </span>
+                                <span newsBoxSource2>Source</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsBox newsBox3">
+                        <div class="newsbox-image newsbox-image-img">
+                            <img class="newsbox-image-img" src="./assets/testNewsImg3.jpg" id="newsBoxImg3">
+                        </div>
+                        <div class="newsbox-content">
+                            <div class="newsbox-content-headline">
+                                <span newsBoxHeadline3>Headline3</span>
+                            </div>
+                            <div class="newsbox-content-article">
+                                <span newsBoxArticle3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ....
+                                </span>
+                                <span newsBoxSource3>Source</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 </body>

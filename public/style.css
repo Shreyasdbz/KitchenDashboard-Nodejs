@@ -6,8 +6,73 @@ body{
     padding: 0%;
     margin: 0%;
     font-family: 'Raleway', sans-serif;
-    background-image: linear-gradient(0.40turn, rgba(134, 244, 252, 0.5),rgb(248, 233, 166, 0.5));
+    /* background-image: linear-gradient(0.40turn, rgb(1, 143, 136), rgb(2, 71, 128)); */
+    /* background-image: linear-gradient(0.40turn, rgba(134, 244, 252, 0.5),rgba(248, 219, 166, 0.5)); */
     background-repeat: no-repeat;
+}
+
+
+/* ---------------------------------------------------- Overall ---------------------------------------------------- */
+:root{
+    /* Good Backgrounds */
+    --day-background: linear-gradient(0.40turn, rgba(134, 244, 252, 0.5),rgb(248, 233, 166, 0.5));
+    --night-background: linear-gradient(0.40turn, rgb(1, 143, 136), rgb(2, 71, 128));
+    --time-card: linear-gradient(0.40turn, rgb(184, 53, 245),rgb(253, 103, 103));
+    --purple-blue: linear-gradient(0.40turn, rgb(130, 62, 255),rgb(74, 216, 252));
+    --pink-blue: linear-gradient(0.40turn, rgb(255, 129, 234),rgb(70, 250, 226));
+    --orange-yellow: linear-gradient(0.40turn, rgb(250, 164, 34), rgb(255, 204, 35));
+    --blue-purple: linear-gradient(0.40turn, rgb(129, 226, 250), rgb(180, 75, 250));
+    --aqua: #00CED1;
+    --blueberry: #2575fc;
+    --grape: #6a11cb;
+    --darkcloud: #8f959a;
+
+    --cool-blue: linear-gradient(0.4turn, #2193b0, #6dd5ed);
+    --tropical: linear-gradient(0.4turn, rgb(85, 255, 153), #FBD786, #f7797d);
+    --tropical-inverted: linear-gradient(0.4turn, #dd3e54, #6be585);
+    --tropical3: linear-gradient(0.4turn, #40E0D0, #FF8C00, #F27121);
+    --moonlight: linear-gradient(0.4turn, #0F2027, #203A43, #f7797d);
+    --moonlight-dark: linear-gradient(0.4turn, #0F2027, #203A43, #2C5364);
+    --moonlight-green: linear-gradient(0.4turn, #8360c3, #2ebf91);
+    --moonlight-green2: linear-gradient(0.4turn, #159957, #155799);
+    --pink-shine: linear-gradient(0.4turn, #12c2e9, #c471ed, #f7797d);
+    --redblue: linear-gradient(0.4turn, #FC466B, #3F5EFB);
+    --instagram: linear-gradient(0.4turn, #833ab4, #fd1d1d, #fcb045);
+    --youtube: linear-gradient(0.4turn, #e52d27, #b31217);
+    --ocean: linear-gradient(0.4turn, #373B44, #4286f4);
+    --sky: linear-gradient(0.4turn, #2980B9, #6DD5FA, #FFFFFF);
+    --dawn: linear-gradient(0.4turn, #8A2387, #E94057, #F27121);
+    --mango: linear-gradient(#ffe259, #ffa751);
+    --blue-glow: linear-gradient(.4turn, #5433FF, #20BDFF, #A5FECB);
+    --sky2: linear-gradient(#1488CC, #2B32B2);
+    --pink: linear-gradient(0.4turn, #ec008c, #fc6767);
+    --flare: linear-gradient(0.4turn, #f12711, #f5af19);
+    --influenza: linear-gradient(0.4turn, #C04848, #480048);
+    --purple-bliss: linear-gradient(0.4turn, #360033, #0b8793);
+    --red-sunset: linear-gradient(0.4turn, #355C7D, #6C5B7B, #C06C84);
+    --witching-hour: linear-gradient(0.4turn, #c31432, #240b36);
+    --pinot-noir: linear-gradient(0.4turn, #4b6cb7, #182848);
+    --aubergine: linear-gradient(0.4turn, #AA076B, #61045F);
+    --soundCloud: linear-gradient(0.4turn, #fe8c00, #f83600);    
+    --visions-of-grandeur: linear-gradient(0.4turn, #000046, #1CB5E0);    
+    --moonlit-asteroid: linear-gradient(0.4turn, #0F2027, #203A43, #2C5364);    
+}
+    
+.day{
+    background-image: var(--day-background);
+}
+
+.night{
+    background-image: var(--night-background);
+}
+
+.container-current{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 1080px;
+    width: 1920px;
 }
 
 .classShow{
@@ -25,16 +90,6 @@ body{
     left: -9999px;
 }
 
-/* ---------------------------------------------------- Overall Container ---------------------------------------------------- */
-.container-current{
-    padding-top: 30px;
-    padding-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 1080px;
-    width: 1920px;
-}
-
 /* ---------------------------------------------------- Time Card classes ---------------------------------------------------- */
 
 .timeCard-container{
@@ -47,7 +102,7 @@ body{
     -moz-box-shadow: 12px 15px 55px -22px rgba(0,0,0,0.62);
     box-shadow: 12px 15px 55px -22px rgba(0,0,0,0.62);    
 
-    background-image: linear-gradient(0.40turn, rgb(184, 53, 245),rgb(253, 103, 103));
+    background-image: var(--influenza);
     background-repeat: no-repeat;
     width: 85%;
     height: 42vh;
@@ -56,11 +111,10 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 
 .timeCard-time{
-    line-height: 100%;
+    line-height: 75%;
     font-size: 18vh;
     color: white;
     border-right: 2pt solid white;
@@ -68,10 +122,14 @@ body{
     margin-right: 200px;
     padding-left: 30px;
 }
+.timeCard-time-AMPM{
+    padding-left: 5%;
+    font-size: 75%;    
+}
 
 .timeCard-date{
-    line-height: 115%;
-    font-size: 8vh;
+    line-height: 125%;
+    font-size: 9vh;
     color: white;
     padding-left: 30px;
     padding-right: 30px;
@@ -98,7 +156,7 @@ body{
 
     background-color: white;
     width: 85%;
-    height: 50vh;
+    height: 49.5vh;
     border-radius: 50px;
 
     display: flex;
@@ -113,8 +171,9 @@ body{
 
 .searchBox-searchText{
     font-size: 4vh;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.5);
     padding-top: 30px;
+    font-weight: 600;
 }
 
 .searchBox-searchInput{
@@ -132,22 +191,18 @@ body{
     padding-bottom: 2.5%;
     border-radius: 15px;
     padding-left: 30px;
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 /* Google Places search classes */
 .pac-item{
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 10px 10px;
 }
-/* .pac-icon{
-    display: none;
-} */
 .pac-item-query{
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding-right: 10px;
 }
-
 
 .searchBox-buttonDiv{
     width: 500px;
@@ -158,7 +213,7 @@ body{
     width: 100%;
     height: 50px;
     border-radius: 50px;
-    background-image: linear-gradient(0.40turn, rgb(130, 62, 255),rgb(74, 216, 252));
+    background-image: var(--purple-blue);
     color: white;
     font-size: 2.5vh;
     box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.4);
@@ -194,29 +249,56 @@ body{
     width: 26%;
     height: 47.5vh;
     border-radius: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.currentConditions-temp{
-    background-image: linear-gradient(0.40turn, rgb(250, 240, 94),rgb(74, 216, 252));
+.currentConditionsTempBox{
+    background-image: var(--cool-blue);
+    /* background-image: linear-gradient(0.40turn, rgb(255, 129, 234),rgb(70, 250, 226)); */
     background-repeat: no-repeat;
-
 }
 
-.currentConditions-wind{
-    background-image: linear-gradient(0.40turn, rgb(255, 129, 234),rgb(70, 250, 226));
+.currentConditionsWindBox{
+    background-image: var(--flare);
     background-repeat: no-repeat;
     margin-left: 55px;
     margin-right: 55px;
 }
 
-.currentConditions-rain{
-    background-image: linear-gradient(0.40turn, rgb(129, 226, 250), rgb(180, 75, 250));
+.currentConditionsRainBox{
+    background-image: var(--moonlight-dark);
     background-repeat: no-repeat;
 }
 
-/* ---------------------------------------------------- Hourly Conditions classes ---------------------------------------------------- */
+.currentConditionsBox-title{
+    color: white;
+    font-size: 5vh;
+    font-weight: 600;
+}
 
-.hourlyConditions-container{
+.currentConditionsBox-icon{
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.currentConditionsBox-val{
+    color: white;
+    font-size: 9vh;
+    font-weight: bold;
+}
+
+.currentConditionsBox-subText{
+    font-size: 6vh;
+    font-weight: normal;
+}
+
+/* ---------------------------------------------------- Split Conditions classes ---------------------------------------------------- */
+
+.splitConditions-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -226,7 +308,7 @@ body{
     /* height: 50vh; */
 }
 
-.hourlyConditions-genral{
+.splitConditions-genral{
     -webkit-box-shadow: 9px 10px 46px -22px rgba(0,0,0,0.62);
     -moz-box-shadow: 9px 10px 46px -22px rgba(0,0,0,0.62);
     box-shadow: 9px 10px 46px -22px rgba(0,0,0,0.62);    
@@ -235,20 +317,153 @@ body{
     height: 50vh;
     border-radius: 35px;
     /* background-image: linear-gradient(0.40turn, rgb(250, 129, 129), rgb(180, 75, 250)); */
-    background-image: linear-gradient(0.40turn, rgb(138, 106, 255), rgb(75, 250, 212));
+    /* background-image: linear-gradient(0.40turn, rgb(138, 106, 255), rgb(75, 250, 212)); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    color: white;
 }
 
-.hourlyConditions-middle{
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.hourlyConditions-left{
+.splitConditions-left{
     margin-right: 15px;
     background-repeat: no-repeat;
 }
 
-.hourlyConditions-right{
+.splitConditions-middle{
+    margin-left: 15px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+}
+
+.splitConditions-right{
     margin-left: 15px;
     background-repeat: no-repeat;
+}
+
+.splitConditions-title{
+    font-size: 5vh;
+    text-decoration: underline;
+}
+.splitConditions-icon{
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+.splitConditions-val{
+    font-size: 7vh;
+    font-weight: 600;
+}
+.splitConditions-subText{
+    font-size: 4vh;
+}
+
+.rainForecastContainer{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-content: center;
+}
+
+.splitConditions-rainIcon{
+    padding-top: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.splitConditions-rainValue{
+    font-size: 4.5vh;
+    font-weight: bold;
+}
+
+.splitConditions-rainSubText{
+    font-size: 3.5vh;
+}
+
+/* ---------------------------------------------------- Hourly Conditions classes ---------------------------------------------------- */
+
+.hourlyConditions-box-background{
+    background-image: var(--soundCloud);
+}
+
+
+/* ---------------------------------------------------- Weekly Conditions classes ---------------------------------------------------- */
+.weeklyConditions-box-background{
+    background-image: var(--visions-of-grandeur);
+}
+
+.splitConditions-title-weekly{
+    padding-bottom: 0%;
+}
+
+/* .splitConditions-icon-weekly{
+    padding: 0%;
+} */
+
+.splitConditions-val-weekly{
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.splitConditions-subText-weekly{
+    font-size: 3vh;
+}
+
+/* .splitConditions-rainValue-weekly{
+    font-size: 85%;
+}
+
+.splitConditions-rainSubText-weekly{
+    font-size: 85%;
+} */
+
+
+/* ---------------------------------------------------- News classes ---------------------------------------------------- */
+
+.news{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.newsBox{
+    background-image: var(--moonlit-asteroid);
+    height: 160px;
+    width: 85%;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 12px 15px 55px -22px rgba(0,0,0,0.62);
+    display: flex;
+    flex-direction: row;    
+}
+.newsBox-middle{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.newsbox-image-img{
+    height: 160px;
+    width: auto;
+    padding-right: 10px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.newsBox-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.newsbox-content-headline{
+    color: white;
+    font-size: 2.8vh;
+}
+
+.newsbox-content-article{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.75vh;
 }
